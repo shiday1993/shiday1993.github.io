@@ -1,2 +1,2 @@
-# shiday
+# Shiday
 My First repo
