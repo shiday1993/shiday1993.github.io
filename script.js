@@ -16,3 +16,7 @@ document.getElementById("loadBtn").addEventListener("click", () => {
       console.error(err);
     });
 });
+
+function klikaku(){
+  Swal.fire('', 'Selamat Datang !!', 'success');
+}
