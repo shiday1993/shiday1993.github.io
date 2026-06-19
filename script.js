@@ -20,3 +20,16 @@ document.getElementById("loadBtn").addEventListener("click", () => {
 function klikaku(){
   Swal.fire('', 'Selamat Datang !!', 'success');
 }
+
+function unduhPDF() {
+    const fileUrl = 'test-blank-pdf.pdf';
+    const namaFile = 'Test_Blank_PDF.pdf';
+    
+    const link = document.createElement('a');
+    link.href = fileUrl;
+    link.download = namaFile;
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
