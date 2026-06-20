@@ -1,65 +1,350 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Syamsul</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syamsul Hidayat — Fullstack Developer</title>
+  <meta name="description" content="Fullstack developer dengan fokus integrasi & bridging sistem, termasuk koneksi layanan BPJS.">
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.1.0/mdb.min.css" rel="stylesheet" />
+  <!-- GANTI: favicon kalau punya -->
+  <link rel="icon" href="data:,">
 
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <style>
-    .card {
-      border-radius: 1rem;
-    }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    .btn-primary {
-      background-color: #1565c0;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-0">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Syamsul Hidayat</a>
-      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </nav>
+  <a href="#konten" class="skip-link">Lompat ke konten</a>
 
-  <!-- Content -->
-  <div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-8 col-lg-6">
-        <div class="card shadow-4">
-          <div class="card-body text-center">
-            <h3 class="card-title mb-3 text-primary">Selamat Datang!</h3>
-            <p class="card-text text-muted">
-              Ini adalah halaman pertama ku di github.
-            </p>
-            <a role='button' class="btn btn-primary mt-3 " onclick="klikaku()">Klik Aku</a>
-            <a role='button' class="btn btn-secondary mt-3 " onclick="unduhPDF()">Download Test PDF</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#top" class="logo">&lt;<span>Syamsul</span>&gt;</a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="navMenu">
+        <a href="#tentang" class="nav-link">Tentang</a>
+        <a href="#pengalaman" class="nav-link">Pengalaman</a>
+        <a href="#studi-kasus" class="nav-link">Studi Kasus</a>
+        <a href="#proyek" class="nav-link">Proyek</a>
+        <a href="#kontak" class="nav-link">Kontak</a>
+      </nav>
+
+      <div class="status-pill" title="Status sistem (cosmetic, just for fun)">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span class="mono">SISTEM: ONLINE</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="konten">
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="wrap hero-inner">
+        <div class="hero-copy reveal">
+          <p class="eyebrow mono">// fullstack developer</p>
+          <h1>Saya membangun jembatan antar sistem yang nggak boleh down.</h1>
+          <p class="hero-sub">
+            Fullstack developer dengan fokus di integrasi &amp; bridging sistem —
+            termasuk koneksi ke layanan BPJS (VClaim, PCare, Antrean Online).
+            Biasa kerja di balik layar, mastiin data ngalir lancar dari sistem
+            rumah sakit/klinik ke layanan pihak ketiga.
+          </p>
+          <div class="hero-actions">
+            <a href="#proyek" class="btn btn-primary">Lihat Proyek</a>
+            <a href="#kontak" class="btn btn-ghost">Hubungi Saya</a>
+          </div>
+        </div>
+
+        <!-- SIGNATURE ELEMENT: integration monitor -->
+        <div class="monitor-panel reveal" aria-label="Status integrasi (ilustratif)">
+          <div class="monitor-titlebar">
+            <span class="dot dot-coral"></span>
+            <span class="dot dot-amber"></span>
+            <span class="dot dot-teal"></span>
+            <span class="monitor-title mono">integration-monitor — bash</span>
+          </div>
+          <div class="monitor-body mono">
+            <div class="monitor-row">
+              <span class="ep-name">VCLAIM-BPJS</span>
+              <span class="ep-status"><span class="dot dot-live"></span>ONLINE</span>
+              <span class="ep-latency" data-latency="142">142ms</span>
+            </div>
+            <div class="monitor-row">
+              <span class="ep-name">PCARE-API</span>
+              <span class="ep-status"><span class="dot dot-live"></span>ONLINE</span>
+              <span class="ep-latency" data-latency="98">98ms</span>
+            </div>
+            <div class="monitor-row">
+              <span class="ep-name">ANTREAN-ONLINE</span>
+              <span class="ep-status"><span class="dot dot-live"></span>ONLINE</span>
+              <span class="ep-latency" data-latency="211">211ms</span>
+            </div>
+            <div class="monitor-row">
+              <span class="ep-name">SEP-BRIDGE</span>
+              <span class="ep-status"><span class="dot dot-live"></span>ONLINE</span>
+              <span class="ep-latency" data-latency="87">87ms</span>
+            </div>
+            <div class="monitor-footer">
+              <!-- GANTI: angka uptime kalau mau pakai data asli -->
+              <span>uptime 30 hari: <strong>99.7%</strong></span>
+              <span class="monitor-clock" id="monitorClock"></span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="text-center text-muted mt-5 mb-3">
-    <small>&copy; 2025 Dibuat oleh <a href="https://shiday1993.github.io/" ><strong>Shiday1993.</strong></a></small>
+    <!-- TENTANG -->
+    <section class="section" id="tentang">
+      <div class="wrap">
+        <p class="eyebrow mono reveal">// tentang-saya</p>
+        <h2 class="reveal">Lebih senang beresin error production daripada nonton drama.</h2>
+        <div class="about-grid reveal">
+          <p class="about-text">
+            <!-- GANTI: ceritain dirimu sendiri, 3-5 kalimat -->
+            Saya developer fullstack dengan pengalaman membangun dan merawat sistem
+            yang menghubungkan aplikasi internal (SIMRS/SIMKLINIK) dengan layanan
+            eksternal seperti BPJS Kesehatan. Saya nyaman kerja dari ujung database
+            sampai antarmuka, tapi paling suka di bagian "tengah" — tempat dua sistem
+            yang beda bahasa harus bisa ngomong satu sama lain tanpa drama.
+          </p>
+          <ul class="chip-list" aria-label="Fokus keahlian">
+            <li class="chip">Integrasi &amp; Bridging API</li>
+            <li class="chip">REST &amp; SOAP Web Service</li>
+            <li class="chip">Sistem Backend &amp; Database</li>
+            <li class="chip">Antarmuka Frontend</li>
+            <li class="chip">Monitoring &amp; Logging</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PENGALAMAN -->
+    <section class="section section-alt" id="pengalaman">
+      <div class="wrap">
+        <p class="eyebrow mono reveal">// pengalaman</p>
+        <h2 class="reveal">Riwayat kerja</h2>
+
+        <ol class="timeline">
+          <li class="timeline-item reveal">
+            <div class="timeline-date mono">2024 — Sekarang</div>
+            <div class="timeline-content">
+              <h3>Fullstack Developer <span class="muted">KL Klinik</span></h3>
+              <ul>
+                <li>Membangun &amp; merawat layanan bridging ke BPJS (VClaim, PCare,
+                  Antrean Online) untuk beberapa rumah sakit/klinik mitra.</li>
+                <li>Menangani autentikasi, enkripsi payload, retry &amp; queue
+                  supaya integrasi tetap stabil walau API pihak ketiga lambat.</li>
+                <li>Membangun dashboard monitoring internal untuk memantau
+                  kesehatan tiap endpoint integrasi secara real-time.</li>
+              </ul>
+            </div>
+          </li>
+         
+          <li class="timeline-item reveal">
+            <div class="timeline-date mono">2024</div>
+            <div class="timeline-content">
+              <h3>Junior Developer <span class="muted">KL Klinik(Magang)</span></h3>
+              <ul>
+                <li>Belajar dasar pengembangan web fullstack &amp; workflow Git tim.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- STUDI KASUS -->
+    <section class="section" id="studi-kasus">
+      <div class="wrap">
+        <p class="eyebrow mono reveal">// studi-kasus</p>
+        <h2 class="reveal">Bridging BPJS, dari dekat</h2>
+        <p class="section-intro reveal">
+          <!-- GANTI: sesuaikan dengan kondisi NDA kamu, ini versi aman & general -->
+          Salah satu kerjaan yang paling sering saya pegang: menjembatani sistem
+          internal rumah sakit/klinik dengan layanan BPJS Kesehatan, supaya proses
+          seperti pembuatan SEP, pengecekan kepesertaan, dan antrean online
+          berjalan otomatis tanpa input manual berulang.
+        </p>
+
+        <div class="flow-diagram reveal" role="img" aria-label="Diagram alir: Sistem RS/Klinik menuju Bridging Service menuju API BPJS">
+          <div class="flow-box">
+            <span class="flow-label mono">SIMRS / SIMKLINIK</span>
+            <span class="flow-desc">Sistem internal rumah sakit/klinik</span>
+          </div>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <div class="flow-box flow-box-mid">
+            <span class="flow-label mono">BRIDGING SERVICE</span>
+            <span class="flow-desc">Auth · Retry · Queue · Logging · Enkripsi</span>
+          </div>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <div class="flow-box">
+            <span class="flow-label mono">API BPJS</span>
+            <span class="flow-desc">VClaim · PCare · Antrean Online</span>
+          </div>
+        </div>
+
+        <div class="case-grid reveal">
+          <div class="case-card">
+            <h3 class="mono">Tantangan</h3>
+            <p>API pihak ketiga punya rate limit, kadang lambat, dan butuh format
+              enkripsi/signature yang ketat. Satu kesalahan kecil bisa bikin
+              antrean pasien macet.</p>
+          </div>
+          <div class="case-card">
+            <h3 class="mono">Solusi</h3>
+            <p>Bikin layer bridging terpisah dengan mekanisme retry &amp; queue,
+              logging detail tiap request/response, plus dashboard monitoring
+              biar tim bisa cepat tahu kalau ada endpoint yang bermasalah.</p>
+          </div>
+          <div class="case-card">
+            <h3 class="mono">Hasil</h3>
+            <!-- GANTI: angka real kalau ada -->
+            <p>Proses yang tadinya manual jadi otomatis, waktu tunggu admin
+              berkurang signifikan, dan integrasi tetap jalan stabil di jam sibuk.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section class="section section-alt" id="stack">
+      <div class="wrap">
+        <p class="eyebrow mono reveal">// stack</p>
+        <h2 class="reveal">Tools yang sering dipakai</h2>
+
+        <div class="stack-grid reveal">
+          <div class="stack-group">
+            <h3 class="mono">Backend</h3>
+            <!-- GANTI: sesuaikan stack asli kamu -->
+            <ul class="chip-list">
+              <li class="chip">Python</li>
+              <li class="chip">PHP Native</li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3 class="mono">Frontend</h3>
+            <ul class="chip-list">
+              <li class="chip">JavaScript</li>
+              <li class="chip">JQuery</li>
+              <li class="chip">Vue.js</li>
+              <li class="chip">HTML &amp; CSS</li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3 class="mono">Database</h3>
+            <ul class="chip-list">
+              <li class="chip">PostgreSQL</li>
+              <li class="chip">MySQL</li>
+              <li class="chip">Redis</li>
+            </ul>
+          </div>
+          <div class="stack-group">
+            <h3 class="mono">Infra &amp; Tools</h3>
+            <ul class="chip-list">
+              <li class="chip">Linux / Nginx / Apache</li>
+              <li class="chip">Docker</li>
+              <li class="chip">Git</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYEK -->
+    <section class="section" id="proyek">
+      <div class="wrap">
+        <p class="eyebrow mono reveal">// proyek</p>
+        <h2 class="reveal">Beberapa proyek</h2>
+
+        <div class="project-grid reveal">
+          <!-- GANTI: judul, deskripsi, tag, dan link tiap proyek -->
+          <article class="project-card">
+            <h3>BPJS Bridging Service</h3>
+            <p>Layanan middleware yang menghubungkan SIMRS dengan VClaim, PCare,
+              dan Antrean Online BPJS Kesehatan.</p>
+            <ul class="tag-list">
+              <li>PHP</li><li>Laravel</li><li>SOAP/REST</li><li>Redis</li>
+            </ul>
+            <div class="project-links">
+              <a href="#" class="project-link">Kode Sumber →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Sistem Antrean Online RS</h3>
+            <p>Aplikasi pendaftaran &amp; antrean pasien online yang terhubung
+              dengan jadwal dokter dan kuota harian.</p>
+            <ul class="tag-list">
+              <li>Vue.js</li><li>Node.js</li><li>WebSocket</li>
+            </ul>
+            <div class="project-links">
+              <a href="#" class="project-link">Kode Sumber →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Dashboard Monitoring Integrasi</h3>
+            <p>Dashboard internal untuk memantau status &amp; performa tiap
+              endpoint integrasi pihak ketiga secara real-time.</p>
+            <ul class="tag-list">
+              <li>React</li><li>Express</li><li>Chart.js</li>
+            </ul>
+            <div class="project-links">
+              <a href="#" class="project-link">Kode Sumber →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section class="section section-alt" id="kontak">
+      <div class="wrap kontak-inner">
+        <p class="eyebrow mono reveal">// kontak</p>
+        <h2 class="reveal">Mau ngobrol soal kerjaan atau proyek?</h2>
+        <p class="reveal">
+          Kirim email aja, atau mampir ke salah satu link di bawah. Biasanya
+          saya balas paling lama 1-2 hari kerja.
+        </p>
+
+        <div class="contact-actions reveal">
+          <!-- GANTI: email kamu -->
+          <a href="mailto:nama@email.com" class="btn btn-primary" id="emailBtn">
+            shiday1993@email.com
+          </a>
+          <button class="btn btn-ghost" id="copyEmailBtn" type="button">
+            Copy email
+          </button>
+        </div>
+
+        <div class="social-links reveal">
+          <!-- GANTI: link sosial kamu -->
+          <a href="https://github.com/shiday1993" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/username" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://wa.me/6285870000408" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://t.me/nsdigital2017" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>&copy; <span id="year"></span>Syamsul Hidayat. Dibuat dengan HTML, CSS &amp; JS — versi Vue nyusul.</p>
+      <!-- GANTI: link ke repo kamu -->
+      <a href="https://github.com/shiday1993/shiday1993.github.io" target="_blank" rel="noopener">Source di GitHub</a>
+    </div>
   </footer>
 
-  <script src="../script.js"></script>
-  <!-- MDB -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.1.0/mdb.umd.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
