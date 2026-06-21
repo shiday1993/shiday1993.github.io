@@ -2,7 +2,6 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
-import HeaderPage from '@/pages/HeaderPage.vue'
 import FooterPage from '@/pages/FooterPage.vue'
 import FooterMinimal from '@/pages/FooterMinimal.vue'
 
@@ -15,7 +14,7 @@ const isMinimal = computed(() => route.meta.layout === 'minimal')
   <div class="drawer min-h-screen flex flex-col">
     <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content flex flex-col min-h-screen">
-      <div class="navbar  sticky top-0 z-50 bg-base-300/80 backdrop-blur-md">
+      <div class="navbar sticky top-0 z-50 bg-base-300/80 backdrop-blur-md">
         <div class="flex-none lg:hidden">
           <label for="my-drawer-2" aria-label="open sidebar" class="btn btn-square btn-ghost">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -36,12 +35,12 @@ const isMinimal = computed(() => route.meta.layout === 'minimal')
             <li><a href="#kontak" class="nav-link">Kontak</a></li>
           </ul>
         </div>
-        <div class="sm:hidden md:block">
+        <div class="hidden md:block">
           <input type="text" placeholder="Search" class="input input-bordered w-65 lg:w-auto" />
         </div>
       </div>
 
-      <main class="flex-1">
+      <main>
         <RouterView />
       </main>
       
@@ -49,9 +48,9 @@ const isMinimal = computed(() => route.meta.layout === 'minimal')
       <FooterMinimal v-else />
 
     </div>
-    <div class="drawer-side">
+    <div class="drawer-side z-50">
       <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
-      <ul class="menu bg-base-200 min-h-full w-50 p-4">
+      <ul class="menu bg-base-200/80 backdrop-md min-h-full w-50 p-4">
         <li><a href="#tentang" class="nav-link">Tentang</a></li>
         <li><a href="#pengalaman" class="nav-link">Pengalaman</a></li>
         <li><a href="#studi-kasus" class="nav-link">Studi Kasus</a></li>
