@@ -1,0 +1,524 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>404 — Halaman Tidak Ditemukan | Syamsul Hidayat</title>
+
+  <meta
+    name="description"
+    content="Halaman yang kamu cari tidak ditemukan."
+  >
+
+  <link rel="icon" href="data:,">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg-soft: #111820;
+      --panel: #151c24;
+      --border: #26313d;
+
+      --text: #e6edf3;
+      --muted: #8b98a5;
+
+      --green: #3ddc97;
+      --green-soft: rgba(61, 220, 151, 0.1);
+
+      --red: #ff6b6b;
+      --amber: #f2c94c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+
+      display: flex;
+      flex-direction: column;
+
+      background:
+        radial-gradient(
+          circle at 50% 35%,
+          rgba(61, 220, 151, 0.055),
+          transparent 35%
+        ),
+        var(--bg);
+
+      color: var(--text);
+
+      font-family: "Inter", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(1100px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      min-height: 72px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    .logo span {
+      color: var(--green);
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 7px 11px;
+
+      border: 1px solid var(--border);
+      border-radius: 999px;
+
+      color: var(--muted);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+      background: var(--green);
+
+      box-shadow: 0 0 10px rgba(61, 220, 151, 0.7);
+    }
+
+    /* MAIN */
+
+    main {
+      flex: 1;
+
+      display: flex;
+      align-items: center;
+
+      padding: 80px 0;
+    }
+
+    .error-container {
+      width: min(760px, 100%);
+      margin-inline: auto;
+    }
+
+    .error-panel {
+      overflow: hidden;
+
+      border: 1px solid var(--border);
+      border-radius: 12px;
+
+      background: var(--panel);
+
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+    }
+
+    /* TERMINAL BAR */
+
+    .terminal-bar {
+      height: 42px;
+
+      display: flex;
+      align-items: center;
+      gap: 7px;
+
+      padding: 0 16px;
+
+      border-bottom: 1px solid var(--border);
+
+      background: var(--bg-soft);
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+    }
+
+    .dot-red {
+      background: var(--red);
+    }
+
+    .dot-amber {
+      background: var(--amber);
+    }
+
+    .dot-green {
+      background: var(--green);
+    }
+
+    .terminal-title {
+      margin-left: 8px;
+
+      color: var(--muted);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+    }
+
+    /* CONTENT */
+
+    .error-content {
+      padding: 64px 56px;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+
+      color: var(--green);
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 13px;
+    }
+
+    .error-code {
+      margin: 0;
+
+      color: var(--text);
+
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(90px, 18vw, 150px);
+      font-weight: 700;
+
+      line-height: 0.85;
+      letter-spacing: -0.07em;
+    }
+
+    h1 {
+      margin: 30px 0 14px;
+
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(28px, 5vw, 42px);
+      line-height: 1.1;
+    }
+
+    .description {
+      max-width: 560px;
+
+      margin: 0;
+
+      color: var(--muted);
+
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* LOG */
+
+    .log {
+      margin-top: 34px;
+      padding: 18px;
+
+      border: 1px solid var(--border);
+      border-radius: 8px;
+
+      background: #0a0f14;
+
+      color: #aab6c2;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .log-line {
+      display: block;
+    }
+
+    .log-prefix {
+      color: var(--muted);
+    }
+
+    .log-error {
+      color: var(--red);
+    }
+
+    .log-success {
+      color: var(--green);
+    }
+
+    /* BUTTON */
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 44px;
+
+      padding: 0 18px;
+
+      border-radius: 7px;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 13px;
+      font-weight: 500;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      border: 1px solid var(--green);
+      background: var(--green);
+      color: #08110d;
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--green);
+    }
+
+    .btn-ghost {
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      min-height: 64px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+
+      color: var(--muted);
+
+      font-size: 12px;
+    }
+
+    .footer-inner p {
+      margin: 0;
+    }
+
+    .footer-inner a {
+      color: var(--text);
+    }
+
+    .footer-inner a:hover {
+      color: var(--green);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 640px) {
+
+      .wrap {
+        width: min(100% - 28px, 1100px);
+      }
+
+      .status-pill {
+        display: none;
+      }
+
+      main {
+        padding: 48px 0;
+      }
+
+      .error-content {
+        padding: 42px 26px;
+      }
+
+      .error-code {
+        font-size: 100px;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .footer-inner {
+        padding: 16px 0;
+
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+
+      <a href="/" class="logo">
+        &lt;<span>Syamsul</span>&gt;
+      </a>
+
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        <span>SISTEM: ONLINE</span>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="wrap">
+      <div class="error-container">
+        <section class="error-panel">
+          <div class="terminal-bar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-amber"></span>
+            <span class="dot dot-green"></span>
+
+            <span class="terminal-title">
+              request-handler — 404
+            </span>
+          </div>
+
+          <div class="error-content">
+            <p class="eyebrow">// endpoint-not-found</p>
+            <p class="error-code">404</p>
+            <h1>
+              Halaman yang kamu cari nggak ditemukan.
+            </h1>
+
+            <p class="description">
+              URL yang kamu akses mungkin salah, sudah dipindahkan,
+              atau memang belum pernah dibuat. Tenang, server-nya
+              nggak down — cuma endpoint-nya aja yang nggak ketemu.
+            </p>
+
+            <div class="log">
+              <span class="log-line">
+                <span class="log-prefix">$ request</span>
+                <span id="requestPath">GET /</span>
+              </span>
+
+              <span class="log-line">
+                <span class="log-prefix">$ status</span>
+                <span class="log-error">404 NOT FOUND</span>
+              </span>
+
+              <span class="log-line">
+                <span class="log-prefix">$ server</span>
+                <span class="log-success">ONLINE</span>
+              </span>
+
+              <span class="log-line">
+                <span class="log-prefix">$ action</span>
+                redirect_to_homepage()
+              </span>
+            </div>
+            
+            <div class="actions">
+              <a href="/" class="btn btn-primary">
+                ← Kembali ke Beranda
+              </a>
+              <button
+                class="btn btn-ghost"
+                type="button"
+                onclick="history.back()"
+              >
+                ↩ Halaman Sebelumnya
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>
+        &copy; <span id="year"></span>
+        Syamsul Hidayat.
+      </p>
+      <a
+        href="https://github.com/shiday1993/shiday1993.github.io"
+        target="_blank"
+        rel="noopener"
+      >
+        Source di GitHub
+      </a>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const requestPath = window.location.pathname + window.location.search;
+
+    document.getElementById("requestPath").textContent =
+      "GET " + (requestPath || "/");
+  </script>
+
+</body>
+</html>
+```
